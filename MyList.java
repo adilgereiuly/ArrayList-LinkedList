@@ -7,5 +7,5 @@ public interface MyList<T> {
     int size ();
     boolean isEmpty ();
     void clear ();
-
+    T set(int index, T item);
 }

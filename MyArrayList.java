@@ -69,4 +69,13 @@ if (array[i].equals(item)) {
         }
 return false;
     }
+
+    public T set(int index, T item) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        T old = (T) array[index];
+        array[index] = item;
+        return old;
+    }
 }

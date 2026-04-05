@@ -143,4 +143,11 @@ public class MyLinkedList<T> implements MyList<T> {
 
         return false;
     }
+
+    public T set(int index, T item) {
+        MyNode<T> node = getNode(index);
+        T old = node.data;
+        node.data = item;
+        return old;
+    }
 }
