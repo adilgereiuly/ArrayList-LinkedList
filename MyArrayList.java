@@ -1,3 +1,10 @@
+/**
+ * Dynamic array implementation of MyList.
+ * Automatically grows in size when capacity is exceeded.
+ * @param <T> the type of elements in the list
+ */
+
+
 public class MyArrayList<T> implements MyList<T> {
 private Object[] array;
 private int size;

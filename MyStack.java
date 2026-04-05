@@ -1,3 +1,10 @@
+/**
+ * Stack implementation using MyArrayList as the underlying data structure.
+ * Follows LIFO (Last In, First Out) principle.
+ * @param <T> the type of elements in the stack
+ */
+
+
 public class MyStack<T> {
     private MyList<T> list;
 

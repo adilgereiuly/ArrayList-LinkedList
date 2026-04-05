@@ -1,3 +1,8 @@
+/**
+ * Generic list interface that defines common operations for all list implementations.
+ * @param <T> the type of elements in the list
+ */
+
 public interface MyList<T> {
     void add(T item);
     void add(int index, T item);

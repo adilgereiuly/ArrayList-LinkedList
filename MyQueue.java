@@ -1,3 +1,10 @@
+/**
+ * Queue implementation using MyArrayList as the underlying data structure.
+ * Follows FIFO (First In, First Out) principle.
+ * @param <T> the type of elements in the queue
+ */
+
+
 public class MyQueue<T> {
     private MyList<T> list;
     public MyQueue() {

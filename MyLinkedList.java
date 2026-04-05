@@ -1,3 +1,9 @@
+/**
+ * Doubly linked list implementation of MyList.
+ * Each node contains references to both next and previous nodes.
+ * @param <T> the type of elements in the list
+ */
+
 public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
