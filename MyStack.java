@@ -5,7 +5,7 @@
  */
 
 
-public class MyStack<T> {
+public class MyStack<T extends Comparable<T>> {
     private MyList<T> list;
 
     public MyStack() {

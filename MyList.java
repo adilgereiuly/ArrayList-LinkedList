@@ -13,4 +13,9 @@ public interface MyList<T> {
     boolean isEmpty ();
     void clear ();
     T set(int index, T item);
+    void sort();
+    int indexOf(Object item);
+    int lastIndexOf(Object item);
+    boolean exists(Object item);
+    Object[] toArray();
 }

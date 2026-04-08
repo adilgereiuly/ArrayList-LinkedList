@@ -5,7 +5,7 @@
  */
 
 
-public class MyArrayList<T> implements MyList<T> {
+public class MyArrayList<T extends Comparable<T>> implements MyList<T> {
 private Object[] array;
 private int size;
 
@@ -84,5 +84,55 @@ return false;
         T old = (T) array[index];
         array[index] = item;
         return old;
+    }
+
+    public void sort() {
+        // Simple bubble sort
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                T current = (T) array[j];
+                T next = (T) array[j + 1];
+                if (current.compareTo(next) > 0) {
+                    // Swap
+                    Object temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+    public int indexOf(Object item) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public int lastIndexOf(Object item) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (array[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public boolean exists(Object item) {
+        return indexOf(item) != -1;
+    }
+
+
+    public Object[] toArray() {
+        Object[] result = new Object[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = array[i];
+        }
+        return result;
     }
 }

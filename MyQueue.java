@@ -5,7 +5,7 @@
  */
 
 
-public class MyQueue<T> {
+public class MyQueue<T extends Comparable<T>> {
     private MyList<T> list;
     public MyQueue() {
         list = new MyArrayList<>();

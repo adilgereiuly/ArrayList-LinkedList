@@ -4,7 +4,7 @@
  * @param <T> the type of elements in the list
  */
 
-public class MyLinkedList<T> implements MyList<T> {
+public class MyLinkedList<T extends Comparable<T>> implements MyList<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
     private int size;
@@ -155,5 +155,69 @@ public class MyLinkedList<T> implements MyList<T> {
         T old = node.data;
         node.data = item;
         return old;
+    }
+
+    public void sort() {
+
+        Object[] arr = toArray();
+
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                T current = (T) arr[j];
+                T next = (T) arr[j + 1];
+                if (current.compareTo(next) > 0) {
+                    Object temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+
+        clear();
+        for (Object item : arr) {
+            add((T) item);
+        }
+    }
+
+
+    public int indexOf(Object item) {
+        MyNode<T> current = head;
+        for (int i = 0; i < size; i++) {
+            if (current.data.equals(item)) {
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
+    }
+
+
+    public int lastIndexOf(Object item) {
+        MyNode<T> current = tail;
+        for (int i = size - 1; i >= 0; i--) {
+            if (current.data.equals(item)) {
+                return i;
+            }
+            current = current.prev;
+        }
+        return -1;
+    }
+
+
+    public boolean exists(Object item) {
+        return indexOf(item) != -1;
+    }
+
+
+    public Object[] toArray() {
+        Object[] result = new Object[size];
+        MyNode<T> current = head;
+        for (int i = 0; i < size; i++) {
+            result[i] = current.data;
+            current = current.next;
+        }
+        return result;
     }
 }
