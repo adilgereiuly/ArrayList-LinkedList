@@ -73,5 +73,26 @@ public class Main {
         System.out.println("New peek: " + heap.peek());
         System.out.println("Size: " + heap.size());
 
+
+        System.out.println("Exists 'Cherry'? " + list.exists("Cherry"));
+        System.out.println("Exists 'Mango'? " + list.exists("Mango"));
+
+
+        list.add("Banana");
+        System.out.println("Last index of 'Banana': " + list.lastIndexOf("Banana"));
+
+
+        MyArrayList<Integer> numbers = new MyArrayList<>();
+        numbers.add(5);
+        numbers.add(1);
+        numbers.add(4);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.sort();
+        System.out.print("Sorted: ");
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.print(numbers.get(i) + " ");
+        }
+
     }
 }
